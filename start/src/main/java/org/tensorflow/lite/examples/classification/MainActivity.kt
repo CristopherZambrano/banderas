@@ -39,7 +39,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
-import org.tensorflow.lite.examples.classification.ml.LugaresTuristicos7
+import org.tensorflow.lite.examples.classification.ml.LugaresQuevedo
 import org.tensorflow.lite.examples.classification.ui.RecognitionAdapter
 import org.tensorflow.lite.examples.classification.util.YuvToRgbConverter
 import org.tensorflow.lite.examples.classification.viewmodel.Recognition
@@ -208,7 +208,7 @@ class MainActivity : AppCompatActivity() {
     private class ImageAnalyzer(ctx: Context, private val listener: RecognitionListener) :
         ImageAnalysis.Analyzer {
 
-        private val flowerModel = LugaresTuristicos7.newInstance(ctx)
+        private val flowerModel = LugaresQuevedo.newInstance(ctx)
 
         // TODO 1: Add class variable TensorFlow Lite Model
         // Initializing the flowerModel by lazy so that it runs in the same thread when the process
