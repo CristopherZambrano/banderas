@@ -39,17 +39,18 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
-import org.tensorflow.lite.examples.classification.ml.LugaresQuevedo
+import org.tensorflow.lite.examples.classification.ml.ModeloExamen
 import org.tensorflow.lite.examples.classification.ui.RecognitionAdapter
 import org.tensorflow.lite.examples.classification.util.YuvToRgbConverter
 import org.tensorflow.lite.examples.classification.viewmodel.Recognition
 import org.tensorflow.lite.examples.classification.viewmodel.RecognitionListViewModel
 import org.tensorflow.lite.support.image.TensorImage
+import java.util.*
 import java.util.concurrent.Executors
 import kotlin.random.Random
 
 // Constants
-private const val MAX_RESULT_DISPLAY = 3 // Maximum number of results displayed
+private const val MAX_RESULT_DISPLAY = 1 // Maximum number of results displayed
 private const val TAG = "TFL Classify" // Name for logging
 private const val REQUEST_CODE_PERMISSIONS = 999 // Return code after asking for permission
 private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA) // permission needed
@@ -208,7 +209,7 @@ class MainActivity : AppCompatActivity() {
     private class ImageAnalyzer(ctx: Context, private val listener: RecognitionListener) :
         ImageAnalysis.Analyzer {
 
-        private val flowerModel = LugaresQuevedo.newInstance(ctx)
+        private val flowerModel = ModeloExamen.newInstance(ctx)
 
         // TODO 1: Add class variable TensorFlow Lite Model
         // Initializing the flowerModel by lazy so that it runs in the same thread when the process
@@ -237,6 +238,7 @@ class MainActivity : AppCompatActivity() {
 
             for (output in outputs) {
                 items.add(Recognition(output.label, output.score))
+
             }
             // Return the result
             listener(items.toList())
@@ -287,3 +289,5 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
+

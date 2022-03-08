@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <TextView
+        android:id="@+id/txtcountrie"
+        android:layout_width="match_parent"
+        android:layout_height="74dp" />
+
+        <ImageView
+        android:id="@+id/imgflagscountrie"
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:contentDescription="TODO"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:ignore="ImageContrastCheck" />
+
+        <TextView
+        android:id="@+id/prefijotelefonico"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:text="Tel Prefix" />
+
+        <TextView
+        android:id="@+id/capitalcountrie"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:text="Capital" />
+
+        <TextView
+        android:id="@+id/codigoiso2"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:text="Code ISO 2" />
+
+        <TextView
+        android:id="@+id/codigoisonumerico"
+        android:layout_width="145dp"
+        android:layout_height="72dp"
+        android:text="Code ISO Num" />
+
+        <TextView
+        android:id="@+id/codigoiso3"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:text="Code ISO "/>
+</LinearLayout>
